@@ -232,7 +232,7 @@ internal class SoundpoolWrapper(private val context: Context, private val maxStr
                 val rate: Double = arguments["rate"] as Double? ?: 1.0
                 val volumeInfo = volumeSettingsForSoundId(soundId = soundId)
                 runBg {
-                    val streamId = soundPool.play(soundId, volumeInfo.left, volumeInfo.right, 0,
+                    val streamId = soundPool.play(soundId, volumeInfo.left, volumeInfo.right, 1,
                             repeat, rate.toFloat())
                     ui {
                         result.success(streamId)
